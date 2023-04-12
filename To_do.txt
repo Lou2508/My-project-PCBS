@@ -9,8 +9,14 @@ Yellow frame, two part: one up with the word "Shape", one down with the word "Fi
 
 Stimuli:
 Rectangle and diamond, empty figures, yellow. Fill with 2 or 3 small solid circles, black.
-4 types of stimuli in total. 
-Those four types need to appear randomly, top or bottom. 
+4 types of stimuli in total.
+
+Randomisation:
+The stimuli has to always appear in an incongruent setting: if the top requires a left-hand response (e), the bottom requires a right-hand response (n), and same for the opposite.
+The randomisation is between settings:
+Rectangle + three circle
+Diamond + Two circle 
+8 designs possible
 
 Task:
 Two control key to compute, need to have the two for a task to end: shape (with e and i key) or filling (with c and n key)
