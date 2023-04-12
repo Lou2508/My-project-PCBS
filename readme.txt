@@ -1,3 +1,18 @@
-this is a little test 
-new line
-again 
+Project inspired by Stoet et al article: Are women better than men at multitasking
+
+Coding gender:
+Need to ask the participants to input their gender
+
+Coding frame: 
+Yellow frame, two part: one up with the word "Shape", one down with the word "Filling"
+
+Stimuli:
+Rectangle and diamond, empty figures, yellow. Fill with 2 or 3 small solid circles, black.
+4 types of stimuli in total. 
+Those four types need to appear randomly, top or bottom. 
+
+Task:
+Two control key to compute, need to have the two for a task to end: shape (with e and i key) or filling (with c and n key)
+
+Analysis: 
+Need column with id and gender. Need the key pressed and the order of them. Need the reaction time.
