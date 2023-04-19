@@ -173,5 +173,3 @@ for t in block_up.trials:
     exp.data.add([key, rt])
   
 control.end()
-
-control.end()
