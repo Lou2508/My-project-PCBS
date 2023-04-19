@@ -11,19 +11,17 @@ Stimuli:
 Rectangle and diamond, empty figures, yellow. Fill with 2 or 3 small solid circles, black.
 4 types of stimuli in total.
 
-Randomisation:
-The stimuli has to always appear in an incongruent setting: if the top requires a left-hand response (e), the bottom requires a right-hand response (n), and same for the opposite.
-The randomisation is between settings:
-Rectangle + three circle
-Diamond + Two circle 
-8 designs possible
-4 seconds to realise the task
+Block design:
+The stimuli can be congruent (shape and filling would require the same key) on incongruent (require different key).
+Half of the trials need to be incongruent one.
 
 Feedback:
 Two possibilities: "Time is up" is the 4 seconds are finished, or "That was the wrong key" for false answers.
 
 Task:
 Two control key to compute, need to have the two for a task to end: shape (with e and i key) or filling (with c and n key)
+If the response is incorrect (time or key): 5s reminder of the stimulus_response mapping, then 500ms pause.
+The intertrial interval lasts 800ms.
 
 Analysis: 
 Need column with id and gender. Need the key pressed and the order of them. Need the reaction time.
