@@ -17,6 +17,10 @@ The randomisation is between settings:
 Rectangle + three circle
 Diamond + Two circle 
 8 designs possible
+4 seconds to realise the task
+
+Feedback:
+Two possibilities: "Time is up" is the 4 seconds are finished, or "That was the wrong key" for false answers.
 
 Task:
 Two control key to compute, need to have the two for a task to end: shape (with e and i key) or filling (with c and n key)
