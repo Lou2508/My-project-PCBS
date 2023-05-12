@@ -6,7 +6,10 @@ from expyriment import design, control, stimuli
 
 #Settings
 N_TRIALS = 20
+MID_N=10
+QUART_N=5
 SIZE_FRAME=(300, 264)
+SIZE_ONE_OBJECT=(50, 50)
 SIZE_FIG=(40, 40)
 RADIUS=5
 BLACK= (0, 0, 0)
@@ -28,7 +31,6 @@ control.initialize(exp)
 #prepare the frame
 up_frame=stimuli.Canvas(SIZE_FRAME, position=(0, +134), colour=YELLOW)
 down_frame=stimuli.Canvas(SIZE_FRAME, position=(0, -134), colour=YELLOW)
-frame=[up_frame, down_frame]
 shape_instruction=stimuli.TextLine("SHAPE", position=(0, +280), text_colour=WHITE)
 filling_instruction=stimuli.TextLine("FILLING", position=(0,-280), text_colour=WHITE)
 
@@ -45,77 +47,89 @@ def draw_diamond(trait, col):
     L2=stimuli.Line(start_point=(178, 132), end_point=(150, 160), line_width=trait, colour=col)
     L3=stimuli.Line(start_point=(150, 160), end_point=(122, 132), line_width=trait, colour=col)
     L4=stimuli.Line(start_point=(122, 132), end_point=(150, 104), line_width=trait, colour=col)
-    return L1
-    return L2
-    return L3
-    return L4
-
+    return l1, l2, l3, l4
 def two_circles(r, col, pos_top, pos_down):
     C1=stimuli.Circle(radius=r, colour=col, position=pos_top)
     C2=stimuli.Circle(radius=r, colour=col, position=pos_down)
-    return C1
-    return C2
+    return c1, c2
 
 def three_circles(r,col, pos_top, pos_mid, pos_down):
     C1=stimuli.Circle(radius=r, colour=col, position=pos_top)
     C2=stimuli.Circle(radius=r, colour=col, position=pos_mid)
     C3=stimuli.Circle(radius=r, colour=col, position=pos_down)
-    return C1
-    return C2
-    return C3
+    return c1, c2, c3
 
 #prepare the stimuli
 def diam_two(pos):
-    diamond=draw.diamond(LINE_WIDTH, BLACK)
-    diamond.plot(frame[pos])
-    circles=two_circles(RADIUS, BLACK, (0, +6), (0, -6))
-    circles.plot(diamond)
+    one_object=stimuli.Canvas(SIZE_ONE_OBJECT)
+    L1, L2, L3, L4 = draw_diamond(LINE_WIDTH, BLACK)
+    L1.plot(one_object)
+    L2.plot(one_object)
+    L3.plot(one_object)
+    L4.plot(one_object)
+    C1, C2=two_circles(RADIUS, BLACK, (0, +6), (0, -6))
+    C1.plot(one_object)
+    C2.plot(one_object)
+    return one_object
 
 def diam_three(pos):
-    diamond=draw.diamond(LINE_WIDTH, BLACK)
-    diamond.plot(frame[pos])
-    circles=three_circles(RADIUS, BLACK, (0, +11), (0, 0), (0, -11))
-    circles.plot(diamond)
+    one_object=stimuli.Canvas(SIZE_ONE_OBJECT)
+    L1, L2, L3, L4 = draw_diamond(LINE_WIDTH, BLACK)
+    L1.plot(one_object)
+    L2.plot(one_object)
+    L3.plot(one_object)
+    L4.plot(one_object)
+    C1, C2, C3=three_circles(RADIUS, BLACK, (0, +11), (0, 0), (0, -11))
+    C1.plot(one_object)
+    C2.plot(one_object)
+    C3.plot(one_object)
+    return one_object
 
 def rect_two(pos):
     rectangle=draw_rectangle(SIZE_FIG, BLACK, LINE_WIDTH)
-    rectangle.plot(frame[pos])
-    circles=two_circles(RADIUS, BLACK, (0, +6), (0, -6))
-    circles.plot(rectangle)
+    C1, C2=two_circles(RADIUS, BLACK, (0, +6), (0, -6))
+    C1.plot(rectangle)
+    C2.plot(rectangle)
+    return rectangle
 
 def rect_three(pos):
     rectangle=draw_rectangle(SIZE_FIG, BLACK, LINE_WIDTH)
-    rectangle.plot(frame[pos])
-    circles=three_circles(RADIUS, BLACK, (0, +11), (0, 0), (0, -11))
-    circles.plot(rectangle)
+    C1, C2, C3=three_circles(RADIUS, BLACK, (0, +11), (0, 0), (0, -11))
+    C1.plot(rectangle)
+    C2.plot(rectangle)
+    C3.plot(rectangle)
+    return rectangle
 
 blankscreen = stimuli.BlankScreen()
 
 #block design
-congruent_top=[rect_two(0), diam_three(0)]
-congruent_bot=[rect_two(1), diam_three(1)]
-incongruent_top=[rect_three(0), diam_two(0)]
-incongruent_bot=[rect_three(1), diam_two(1)]
-
-def design_cong(list_pos, block_name):
-    for fig in enumerate(list_pos):
-        t=design.Trial()
-        t.add_stimulus(fig)
-        block_name.add_trial(t, (N_TRIALS/4))
-def design_incong(list_pos, block_name):
-    for fig in enumerate(list_pos):
-        t=design.Trial()
-        t.add_stimulus(fig)
-        block_name.add_trial(t, (N_TRIALS/4))
+def design_cong(shape1, shape2, frame, block_name):
+    t=design.Trial()
+    shape1.plot(frame)
+    shape2.plot(frame)
+    t.add_stimulus(shape1)
+    T=design.Trial()
+    T.add_stimulus(shape2)
+    block_name.add_trial(t, QUART_N)
+    block_name.add_trial(T, QUART_N)
+def design_incong(shape1, shape2, frame, block_name):
+    t=design.Trial()
+    shape1.plot(frame)
+    shape2.plot(frame)
+    t.add_stimulus(shape1)
+    T=design.Trial()
+    T.add_stimulus(shape2)
+    block_name.add_trial(t, QUART_N)
+    block_name.add_trial(T, QUART_N)
 
 block_up=design.Block()
-design_cong(congruent_top, block_up)
-design_incong(incongruent_top, block_up)
+design_cong(rect_two(),diam_three(), up_frame, block_up)
+design_incong(rect_three(), diam_two(), up_frame, block_up)
 block_up.shuffle_trials()
 
 block_bot=design.Block()
-design_cong(congruent_bot, block_bot)
-design_incong(incongruent_bot, block_bot)
+design_cong(rect_two(), diam_three(), down_frame, block_bot)
+design_incong(rect_three(),diam_two(), down_frame, block_bot)
 block_bot.shuffle_trials()
 
 #Feedback messages
@@ -132,9 +146,9 @@ instructions = stimuli.TextScreen("Instructions",
     For the bottom of the frame, you have to press {TWO_FILL_RESPONSE_KEY.upper()} when there is 2 circles
     inside the figure and {THREE_FILL_RESPONSE_KEY.upper()} when there is 3 circles.
 
-    The {N_TRIALS/2} first trials, you will only have to do the shape task.
-    The {N_TRIALS/2} next trials, you will only have to do the filling task.
-    Then, you both tasks will be mixed for {N_TRIALS} 
+    The {MID_N} first trials, you will only have to do the shape task.
+    The {MID_N} next trials, you will only have to do the filling task.
+    Then, both tasks will be mixed for {N_TRIALS} trials 
 
     There will be {N_TRIALS *2} trials in total. You have 4s to respond for each trial.
 
