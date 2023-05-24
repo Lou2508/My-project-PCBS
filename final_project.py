@@ -224,7 +224,6 @@ gender_question.present()
 gender = exp.keyboard.wait_char([M_RESPONSE_KEY, F_RESPONSE_KEY, O_RESPONSE_KEY], duration=MAX_RESPONSE_DELAY)
 exp.data.add(gender)
 
-
 blankscreen.present()
 
 #first block
@@ -238,7 +237,7 @@ for t in block_up.trials:
         exp.clock.wait(5000)
     else:
         is_correct_answer = (t.get_factor('is_rect') and key == RECT_RESPONSE_KEY) or \
-                        (not t.get_factor('is_rect') and key ==  RECT_RESPONSE_KEY)
+                        (not t.get_factor('is_rect') and key ==  DIAM_RESPONSE_KEY)
         if not is_correct_answer:
             feedback_wrong.present(clear=True, update=False)
             mapping_reminder_shape.present(clear=False, update=True)
