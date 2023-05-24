@@ -1,5 +1,6 @@
 Project inspired by Stoet et al article: Are women better than men at multitasking
 This program runs with the package expyriment (http://www.expyriment.org).
+
 This program aims at testing the stereotypical assumption that women are better than men in multitasking.
 The two tasks here are computing the shape of a figure (rectangle or diamond) or the filling of it (two or three circles). 
 The nature of the task depends of the position it appears: up is the shape task, down is the filling task.
@@ -18,6 +19,7 @@ Experiment:
 In the first block, the stimuli appeared only in the up frame.
 Subject as 4 seconds to respond.
 If they press the wrong key, they will have a feedback, and a reminder of the key to use. 
+
 If they don't respond in 4 seconds, they will have a feedback about the end of time, and the reminder. 
 In the second block, the stimuli appeared only in the down frame. The conditions are the same. 
 In the last block, the tasks are mixed randomly. The conditions are otherwise the same. 
