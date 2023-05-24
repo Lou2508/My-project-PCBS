@@ -12,7 +12,7 @@ The gender is asked, with 3 possible options: "Male", "Female" or "Other".
 Preparation of the stimuli:
 First, 4 fonctions to create rectangle, diamond, three circles and two circles
 Then, the stimuli are created in functions, with the frames, tasks position, and composed stimuli.
-![example_shape](https://github.com/Lou2508/My-project-PCBS/assets/129277344/c4e794ed-9a28-4520-b95e-549f65908532)
+https://github.com/Lou2508/My-project-PCBS/assets/129277344/c4e794ed-9a28-4520-b95e-549f65908532
 
 Experiment:
 In the first block, the stimuli appeared only in the up frame.
