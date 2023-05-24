@@ -19,7 +19,7 @@ Experiment:
 In the first block, the stimuli appeared only in the up frame.
 Subject as 4 seconds to respond.
 If they press the wrong key, they will have a feedback, and a reminder of the key to use. 
-
+https://github.com/Lou2508/My-project-PCBS/assets/129277344/6f4b1bb0-7900-46e1-8157-23fd3a81b850
 If they don't respond in 4 seconds, they will have a feedback about the end of time, and the reminder. 
 In the second block, the stimuli appeared only in the down frame. The conditions are the same. 
 In the last block, the tasks are mixed randomly. The conditions are otherwise the same. 
