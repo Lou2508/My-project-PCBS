@@ -220,8 +220,8 @@ exp.keyboard.wait()
 
 #gender question
 blankscreen.present()
-gender.present()
-gender_question = exp.keyboard.wait_char([M_RESPONSE_KEY, F_RESPONSE_KEY, O_RESPONSE_KEY], duration=MAX_RESPONSE_DELAY)
+gender_question.present()
+gender = exp.keyboard.wait_char([M_RESPONSE_KEY, F_RESPONSE_KEY, O_RESPONSE_KEY], duration=MAX_RESPONSE_DELAY)
 exp.data.add(gender)
 
 
