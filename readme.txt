@@ -1,6 +1,24 @@
 Project inspired by Stoet et al article: Are women better than men at multitasking
+This program runs with the package expyriment (http://www.expyriment.org).
+This program aims at testing the stereotypical assumption that women are better than men in multitasking.
+The two tasks here are computing the shape of a figure (rectangle or diamond) or the filling of it (two or three circles). 
+The nature of the task depends of the position it appears: up is the shape task, down is the filling task.
+For the top of the frame, you have to press E when a rectangle appear and I when a diamond appear.
+For the bottom of the frame, you have to press C when there is 2 circles inside the figure and N when there is 3 circles.
 
-This program aims at testing the stereotypical assumption that women are better than men in multitasking. 
-The two tasks here are computing the shape of a figure (rectangle or diamond) and the filling of them (one or two circles).
-The two tasks are always presented in a way that opposite responses were required (left and right).
-Feedbacks are provided after each trial.
+Gender questions:
+The gender is asked, with 3 possible options: "Male", "Female" or "Other".
+
+
+Preparation of the stimuli:
+First, 4 fonctions to create rectangle, diamond, three circles and two circles
+Then, the stimuli are created in functions, with the frames, tasks position, and composed stimuli.
+
+
+Experiment:
+In the first block, the stimuli appeared only in the up frame.
+Subject as 4 seconds to respond.
+If they press the wrong key, they will have a feedback, and a reminder of the key to use. 
+If they don't respond in 4 seconds, they will have a feedback about the end of time, and the reminder. 
+In the second block, the stimuli appeared only in the down frame. The conditions are the same. 
+In the last block, the tasks are mixed randomly. The conditions are otherwise the same. 
