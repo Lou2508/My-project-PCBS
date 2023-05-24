@@ -1,5 +1,5 @@
 Project inspired by Stoet et al article: Are women better than men at multitasking
-This program runs with the package expyriment (http://www.expyriment.org).
+This program runs with the package expyriment (http://docs.expyriment.org/Installation.html).
 
 This program aims at testing the stereotypical assumption that women are better than men in multitasking.
 The two tasks here are: computing the shape of a figure (rectangle or diamond) or the filling of it (two or three circles). 
