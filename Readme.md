@@ -14,13 +14,16 @@ The gender is asked before the beginning of the experiment with 3 possible optio
 Preparation of the stimuli:
 First, 4 fonctions to create rectangle, diamond, three circles and two circles
 Then, the stimuli are created in functions, with the frames, tasks information, and composed stimuli.
+
 ![Example of a frame](https://github.com/Lou2508/My-project-PCBS/assets/129277344/615f8c56-0d4b-42b2-bc67-d1bdd258aae9)
 
 Experiment:
 In the first block, the stimuli appeared only in the up frame.
 Subject as 4 seconds to respond.
 If they press the wrong key, they will have a feedback, and a reminder of the key to use. 
-![Example of feedback]https://github.com/Lou2508/My-project-PCBS/assets/129277344/6f4b1bb0-7900-46e1-8157-23fd3a81b850
+
+![Example of feedback](https://github.com/Lou2508/My-project-PCBS/assets/129277344/6f4b1bb0-7900-46e1-8157-23fd3a81b850)
+
 If they don't respond in 4 seconds, they will have a feedback about the end of time, and the reminder. 
 In the second block, the stimuli appeared only in the down frame. The conditions are the same. 
 In the last block, the tasks are mixed randomly. The conditions are otherwise the same. 
