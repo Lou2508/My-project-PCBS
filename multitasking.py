@@ -212,7 +212,7 @@ instructions = stimuli.TextScreen("Instructions",
 
     Press the spacebar to start.""")
 
-exp.add_data_variable_names(['gender', 'key', 'RT'])
+exp.add_data_variable_names(['gender', 'type', 'key', 'RT'])
 
 control.start(skip_ready_screen=True)
 instructions.present()
@@ -221,8 +221,7 @@ exp.keyboard.wait()
 #gender question
 blankscreen.present()
 gender_question.present()
-gender = exp.keyboard.wait_char([M_RESPONSE_KEY, F_RESPONSE_KEY, O_RESPONSE_KEY], duration=MAX_RESPONSE_DELAY)
-exp.data.add(gender)
+gender, delay = exp.keyboard.wait_char([M_RESPONSE_KEY, F_RESPONSE_KEY, O_RESPONSE_KEY], duration=MAX_RESPONSE_DELAY)
 
 blankscreen.present()
 
@@ -242,7 +241,7 @@ for t in block_up.trials:
             feedback_wrong.present(clear=True, update=False)
             mapping_reminder_shape.present(clear=False, update=True)
             exp.clock.wait(5000)
-    exp.data.add([key, rt])
+    exp.data.add([gender, t.get_factor('type'), key, rt])
 
 #second block
 for t in block_bot.trials:
@@ -260,7 +259,7 @@ for t in block_bot.trials:
             feedback_wrong.present(clear=True, update=False)
             mapping_reminder_fill.present(clear=False, update=True)
             exp.clock.wait(5000)
-    exp.data.add([key, rt])
+    exp.data.add([gender, t.get_factor('type'), (key, rt])
 
 #mixing block
 for t in block_mixed.trials:
@@ -287,6 +286,6 @@ for t in block_mixed.trials:
                 feedback_wrong.present(clear=True, update=False)
                 mapping_reminder_fill.present(clear=False, update=True)
                 exp.clock.wait(5000)
-    exp.data.add([key, rt])
+    exp.data.add([gender, t.get_factor('type'), key, rt])
 
 exp.data.save("multitasking_data.csv")
