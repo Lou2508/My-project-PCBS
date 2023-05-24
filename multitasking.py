@@ -202,7 +202,6 @@ instructions = stimuli.TextScreen("Instructions",
 
     The {MID_N} first trials, you will only have to do the shape task.
     The {MID_N} next trials, you will only have to do the filling task.
-
     Then, both tasks will be mixed for {N_TRIALS} trials
 
     There will be {N_TRIALS *2} trials in total. You have 4s to respond for each trial.
@@ -287,5 +286,5 @@ for t in block_mixed.trials:
                 mapping_reminder_fill.present(clear=False, update=True)
                 exp.clock.wait(5000)
     exp.data.add([gender, t.get_factor('type'), key, rt])
-
-exp.data.save("multitasking_data.csv")
+                    
+control.end()
