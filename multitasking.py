@@ -273,14 +273,14 @@ for t in block_mixed.trials:
         mapping_reminder_shape.present(clear=False, update=True)
         exp.clock.wait(5000)
     else:
-        if t in up_shape:
+        if t.stimuli[0] in up_shape:
             is_correct_anwer = (t.get_factor('is_rect') and key == RECT_RESPONSE_KEY) or\
                         (not t.get_factor('is_rect') and key == DIAM_RESPONSE_KEY)
             if not is_correct_answer:
                 feedback_wrong.present(clear=True, update=False)
                 mapping_reminder_shape.present(clear=False, update=True)
-                expl.clock.wait(500)
-        if t in down_shape:
+                exp.clock.wait(500)
+        if t.stimuli[0] in down_shape:
             is_correct_answer = (t.get_factor('is_two') and key == TWO_FILL_RESPONSE_KEY) or \
                         (not t.get_factor('is_two') and key ==  THREE_FILL_RESPONSE_KEY)
             if not is_correct_answer:
